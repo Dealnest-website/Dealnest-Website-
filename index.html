@@ -15,7 +15,19 @@ const products=[
 ["Premium Cushion Set","₹499","Home","🛋️"]
 ];
 function render(a){count.textContent=a.length+" products";grid.innerHTML=a.map(p=>`<article class="card"><div class="pic">${p[3]}</div><div class="body"><h3>${p[0]}</h3><div class="price">${p[1]}</div><div class="links"><a href="#" onclick="go(event,'Meesho')">Buy on Meesho</a><a href="#" onclick="go(event,'Amazon')">Buy on Amazon</a><a href="#" onclick="go(event,'Flipkart')">Buy on Flipkart</a><a href="#" onclick="go(event,'Myntra')">Buy on Myntra</a></div></div></article>`).join("")}
-function go(e,p){e.preventDefault();alert(p+" affiliate link will be connected to this button after your approved affiliate links are added.");}
+f.");function go(e,p){
+  e.preventDefault();
+
+  const links = {
+    Meesho: "https://www.meesho.com/af_invite/578246369:instagram_product_tag:9986070?p_id=949126175&ext_id=fp32fz&utm_source=instagram_product_tag"
+  };
+
+  if(links[p]){
+    window.location.href = links[p];
+  } else {
+    alert(p + " affiliate link abhi add nahi hua hai.");
+  }
+  }
 function showAll(){render(products)} function cat(c){render(products.filter(x=>x[2]==c))}
 function searchProducts(){let q=search.value.toLowerCase();render(products.filter(x=>(x[0]+" "+x[2]).toLowerCase().includes(q)))} render(products);
 </script></body></html>
