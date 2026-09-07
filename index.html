@@ -196,7 +196,7 @@ const SUPABASE_URL =
 "https://vqpxxlztaqfyrqifsqfh.supabase.co";
 
 /*
-PASTE YOUR SUPABASE PUBLISHABLE KEY BELOW
+PASTEsb_publishable_a-FEj0g60Zz2IOOc4VifbQ_EUZaFbCi YOUR SUPABASE PUBLISHABLE KEY BELOW
 DO NOT USE SERVICE ROLE / SECRET KEY
 */
 
@@ -606,7 +606,22 @@ return String(value||"")
 /* START */
 
 loadProducts();
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelector(".adminBtn");
 
+  if (btn) {
+    btn.onclick = function (e) {
+      e.preventDefault();
+
+      const panel = document.getElementById("adminPanel");
+
+      panel.style.display = "block";
+      panel.scrollIntoView({ behavior: "smooth" });
+
+      checkUser();
+    };
+  }
+});
 </script>
 
 </body>
