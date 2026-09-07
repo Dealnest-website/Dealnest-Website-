@@ -7,301 +7,52 @@
 
 <style>
 *{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f7f8fc;
-color:#151827;
-}
-
-header{
-background:#111827;
-color:white;
-padding:14px 5%;
-display:flex;
-align-items:center;
-gap:12px;
-position:sticky;
-top:0;
-z-index:9999;
-}
-
-.logo{
-font-size:26px;
-font-weight:900;
-white-space:nowrap;
-}
-
+body{margin:0;font-family:Arial,sans-serif;background:#f7f8fc;color:#151827}
+header{background:#111827;color:#fff;padding:14px 5%;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:9999}
+.logo{font-size:26px;font-weight:900;white-space:nowrap}
 .logo span{color:#fbbf24}
-
-.search{
-flex:1;
-padding:13px 15px;
-border:0;
-border-radius:12px;
-font-size:15px;
-min-width:0;
-}
-
-.adminBtn{
-background:#fbbf24;
-color:#111827;
-border:0;
-padding:12px 16px;
-border-radius:10px;
-font-weight:800;
-font-size:14px;
-cursor:pointer;
-touch-action:manipulation;
-position:relative;
-z-index:10000;
-}
-
-.hero{
-padding:55px 6%;
-text-align:center;
-background:linear-gradient(120deg,#eef2ff,#fff7ed);
-}
-
-.hero h1{
-font-size:clamp(32px,6vw,56px);
-margin:0 0 12px;
-}
-
-.hero p{
-font-size:18px;
-color:#64748b;
-}
-
-.cats{
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-margin-top:24px;
-}
-
-.cats button{
-border:1px solid #dbe2ea;
-background:white;
-padding:10px 17px;
-border-radius:99px;
-cursor:pointer;
-}
-
-.features{
-background:white;
-padding:18px 6%;
-display:flex;
-justify-content:center;
-gap:28px;
-flex-wrap:wrap;
-border-bottom:1px solid #eee;
-}
-
-.wrap{
-max-width:1250px;
-margin:auto;
-padding:32px 6%;
-}
-
-.top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 8px 30px #11182712;
-}
-
-.pic{
-height:260px;
-background:#eef0f4;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.pic img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.body{
-padding:17px;
-}
-
-.body h3{
-margin:0 0 8px;
-}
-
-.price{
-font-size:21px;
-font-weight:800;
-margin-bottom:14px;
-}
-
-.buy{
-display:block;
-background:#111827;
-color:white;
-text-decoration:none;
-text-align:center;
-padding:11px;
-border-radius:10px;
-font-weight:700;
-}
-
-.notice{
-margin-top:32px;
-padding:17px;
-background:white;
-border-radius:14px;
-color:#526174;
-border:1px solid #e5e7eb;
-}
-
-footer{
-margin-top:30px;
-background:#111827;
-color:#cbd5e1;
-padding:35px 6%;
-text-align:center;
-}
-
+.search{flex:1;padding:13px 15px;border:0;border-radius:12px;font-size:15px;min-width:0}
+.adminBtn{background:#fbbf24;color:#111827;border:0;padding:12px 16px;border-radius:10px;font-weight:800;cursor:pointer}
+.hero{padding:55px 6%;text-align:center;background:linear-gradient(120deg,#eef2ff,#fff7ed)}
+.hero h1{font-size:clamp(32px,6vw,56px);margin:0 0 12px}
+.hero p{font-size:18px;color:#64748b}
+.cats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+.cats button{border:1px solid #dbe2ea;background:#fff;padding:10px 17px;border-radius:99px;cursor:pointer}
+.features{background:#fff;padding:18px 6%;display:flex;justify-content:center;gap:28px;flex-wrap:wrap;border-bottom:1px solid #eee}
+.wrap{max-width:1250px;margin:auto;padding:32px 6%}
+.top{display:flex;justify-content:space-between;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px #11182712}
+.pic{height:260px;background:#eef0f4;display:flex;align-items:center;justify-content:center}
+.pic img{width:100%;height:100%;object-fit:cover}
+.body{padding:17px}
+.body h3{margin:0 0 8px}
+.price{font-size:21px;font-weight:800;margin-bottom:14px}
+.buy{display:block;background:#111827;color:#fff;text-decoration:none;text-align:center;padding:11px;border-radius:10px;font-weight:700}
+.notice{margin-top:32px;padding:17px;background:#fff;border-radius:14px;color:#526174;border:1px solid #e5e7eb}
+footer{margin-top:30px;background:#111827;color:#cbd5e1;padding:35px 6%;text-align:center}
 .small{font-size:12px}
 
-/* ADMIN */
-
-#adminPanel{
-display:none;
-max-width:900px;
-margin:25px auto;
-padding:25px;
-background:white;
-border-radius:18px;
-box-shadow:0 8px 30px #11182718;
-}
-
-.loginBox{
-max-width:420px;
-margin:auto;
-display:grid;
-gap:12px;
-}
-
-.loginBox input,
-.form input,
-.form select{
-width:100%;
-padding:13px;
-border:1px solid #dbe2ea;
-border-radius:10px;
-font-size:15px;
-}
-
-.loginBox button,
-.form button{
-padding:13px;
-border:0;
-border-radius:10px;
-background:#111827;
-color:white;
-font-weight:700;
-cursor:pointer;
-}
-
-.msg{
-padding:10px;
-border-radius:8px;
-background:#f1f5f9;
-margin-top:5px;
-}
-
-#dashboard{
-display:none;
-}
-
-.adminHead{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-}
-
-.adminHead button{
-padding:9px 13px;
-border:0;
-border-radius:8px;
-background:#ef4444;
-color:white;
-font-weight:700;
-}
-
-.form{
-display:grid;
-gap:12px;
-}
-
-.adminProduct{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
-padding:13px;
-margin-top:10px;
-border:1px solid #e5e7eb;
-border-radius:12px;
-}
-
-.adminActions{
-display:flex;
-gap:7px;
-}
-
-.adminActions button{
-border:0;
-padding:8px 11px;
-border-radius:8px;
-cursor:pointer;
-}
+#adminPanel{display:none;max-width:900px;margin:25px auto;padding:25px;background:#fff;border-radius:18px;box-shadow:0 8px 30px #11182718}
+.loginBox{max-width:420px;margin:auto;display:grid;gap:12px}
+.loginBox input,.form input,.form select{width:100%;padding:13px;border:1px solid #dbe2ea;border-radius:10px;font-size:15px}
+.loginBox button,.form button{padding:13px;border:0;border-radius:10px;background:#111827;color:#fff;font-weight:700;cursor:pointer}
+.msg{padding:10px;border-radius:8px;background:#f1f5f9;margin-top:5px}
+.linkBtn{border:0;background:none;color:#2563eb;cursor:pointer;padding:0;font-weight:700}
+#dashboard,#resetSection{display:none}
+.adminHead{display:flex;justify-content:space-between;align-items:center}
+.logout{padding:9px 13px;border:0;border-radius:8px;background:#ef4444;color:#fff;font-weight:700}
+.form{display:grid;gap:12px}
+.adminProduct{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:13px;margin-top:10px;border:1px solid #e5e7eb;border-radius:12px}
+.adminActions{display:flex;gap:7px}
+.adminActions button{border:0;padding:8px 11px;border-radius:8px;cursor:pointer}
 
 @media(max-width:600px){
-
-header{
-padding:11px 3%;
-}
-
-.logo{
-font-size:20px;
-}
-
-.search{
-font-size:13px;
-}
-
-.adminBtn{
-padding:10px;
-font-size:12px;
-}
-
-#adminPanel{
-margin:15px 3%;
-padding:18px;
-}
-
+header{padding:11px 3%}
+.logo{font-size:20px}
+.search{font-size:13px}
+.adminBtn{padding:10px;font-size:12px}
+#adminPanel{margin:15px 3%;padding:18px}
 }
 </style>
 </head>
@@ -309,124 +60,95 @@ padding:18px;
 <body>
 
 <header>
-
-<div class="logo">
-Deal<span>Nest</span>
-</div>
-
-<input
-id="search"
-class="search"
-placeholder="Search products..."
->
-
-<button
-id="adminButton"
-class="adminBtn"
-type="button"
->
-🔐 Admin
-</button>
-
+<div class="logo">Deal<span>Nest</span></div>
+<input id="search" class="search" placeholder="Search products...">
+<button id="adminButton" class="adminBtn" type="button">🔐 Admin</button>
 </header>
 
 <section class="hero">
-
 <h1>Shop smarter. Find better deals.</h1>
-
-<p>
-Discover products and choose where you want to buy.
-</p>
+<p>Discover products and choose where you want to buy.</p>
 
 <div class="cats">
-
-<button data-category="All">All</button>
-<button data-category="Fashion">Fashion</button>
-<button data-category="Beauty">Beauty</button>
-<button data-category="Electronics">Electronics</button>
-<button data-category="Home">Home</button>
-
+<button data-cat="All">All</button>
+<button data-cat="Fashion">Fashion</button>
+<button data-cat="Beauty">Beauty</button>
+<button data-cat="Electronics">Electronics</button>
+<button data-cat="Home">Home</button>
 </div>
-
 </section>
 
 <div class="features">
-
 <b>✓ Curated picks</b>
 <b>✓ Multiple stores</b>
 <b>✓ Easy shopping</b>
 <b>✓ Affiliate transparency</b>
-
 </div>
 
 <main class="wrap">
-
 <div class="top">
-
 <h2>Editor's Picks</h2>
-
 <span id="count"></span>
-
 </div>
 
 <div id="grid" class="grid"></div>
 
 <div class="notice">
-
 <b>Affiliate Disclosure:</b>
-
-Some links on DealNest are affiliate links.
-If you make a purchase through an eligible link,
-DealNest may earn a commission.
-
+Some links on DealNest are affiliate links. If you make a purchase through an eligible link, DealNest may earn a commission.
 </div>
-
 </main>
-
-<!-- ADMIN -->
 
 <section id="adminPanel">
 
+<!-- LOGIN -->
 <div id="loginSection">
 
 <h2>🔐 DealNest Admin Login</h2>
 
 <div class="loginBox">
 
-<input
-id="loginEmail"
-type="email"
-placeholder="Admin email"
->
+<input id="loginEmail" type="email" placeholder="Admin email">
+<input id="loginPassword" type="password" placeholder="Password">
 
-<input
-id="loginPassword"
-type="password"
-placeholder="Password"
->
+<button id="loginButton" type="button">Login</button>
 
-<button id="loginButton" type="button">
-Login
+<button id="forgotButton" class="linkBtn" type="button">
+Forgot password?
 </button>
 
-<div id="loginMsg" class="msg">
-Enter your verified admin email and password.
-</div>
+<div id="loginMsg" class="msg"></div>
 
 </div>
-
 </div>
 
+
+<!-- RESET PASSWORD -->
+<div id="resetSection">
+
+<h2>🔄 Create New Password</h2>
+
+<div class="loginBox">
+
+<input id="newPassword" type="password" placeholder="New password">
+<input id="confirmPassword" type="password" placeholder="Confirm new password">
+
+<button id="updatePasswordButton" type="button">
+Update Password
+</button>
+
+<div id="resetMsg" class="msg"></div>
+
+</div>
+</div>
+
+
+<!-- DASHBOARD -->
 <div id="dashboard">
 
 <div class="adminHead">
-
 <h2>🛠️ Product Manager</h2>
-
-<button id="logoutButton" type="button">
-Logout
-</button>
-
+<button id="logoutButton" class="logout" type="button">Logout</button>
 </div>
 
 <hr>
@@ -435,58 +157,35 @@ Logout
 
 <div class="form">
 
-<input
-id="productName"
-placeholder="Product name"
->
-
-<input
-id="productPrice"
-placeholder="Price e.g. ₹399"
->
+<input id="productName" placeholder="Product name">
+<input id="productPrice" placeholder="Price e.g. ₹399">
 
 <select id="productCategory">
-
 <option value="Fashion">Fashion</option>
 <option value="Beauty">Beauty</option>
 <option value="Electronics">Electronics</option>
 <option value="Home">Home</option>
-
 </select>
 
-<input
-id="productImage"
-placeholder="Product image URL"
->
+<input id="productImage" placeholder="Product image URL">
 
 <select id="productPlatform">
-
 <option value="Meesho">Meesho</option>
 <option value="Amazon">Amazon</option>
 <option value="Flipkart">Flipkart</option>
 <option value="Myntra">Myntra</option>
-
 </select>
 
-<input
-id="productAffiliate"
-placeholder="Affiliate link"
->
+<input id="productAffiliate" placeholder="Affiliate link">
 
-<button id="saveButton" type="button">
-➕ Save Product
-</button>
-
-<button id="clearButton" type="button">
-Clear
-</button>
+<button id="saveButton" type="button">➕ Save Product</button>
+<button id="clearButton" type="button">Clear</button>
 
 <div id="adminMsg" class="msg"></div>
 
 </div>
 
 <h3>Your Products</h3>
-
 <div id="adminProducts"></div>
 
 </div>
@@ -494,30 +193,26 @@ Clear
 </section>
 
 <footer>
-
-<b>DealNest</b>
-<br>
-
-<span class="small">
-A multi-store affiliate shopping platform • © 2026
-</span>
-
+<b>DealNest</b><br>
+<span class="small">A multi-store affiliate shopping platform • © 2026</span>
 </footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 
-/* =====================================
-   SUPABASE CONNECTION
-   ===================================== */
+/* =========================
+SUPABASE
+========================= */
 
 const SUPABASE_URL =
 "https://vqpxxlztaqfyrqifsqfh.supabase.co";
 
 /*
-PASTE YOUR SUPABASE PUBLISHABLE KEY
-BETWEEN THE QUOTES BELOW.
+IMPORTANT:
+PASTE YOUR SUPABASE PUBLISHABLE KEY BELOW.
+DO NOT USE SERVICE ROLE / SECRET KEY.
 */
 
 const SUPABASE_KEY =
@@ -529,25 +224,20 @@ SUPABASE_URL,
 SUPABASE_KEY
 );
 
-
-/* =====================================
-   VARIABLES
-   ===================================== */
-
-let products = [];
-let editingId = null;
+let products=[];
+let editingId=null;
 
 
-/* =====================================
-   BASIC HELPERS
-   ===================================== */
+/* =========================
+HELPER
+========================= */
 
 function $(id){
 return document.getElementById(id);
 }
 
 function safe(value){
-return String(value || "")
+return String(value||"")
 .replace(/&/g,"&amp;")
 .replace(/</g,"&lt;")
 .replace(/>/g,"&gt;")
@@ -556,13 +246,11 @@ return String(value || "")
 }
 
 
-/* =====================================
-   ADMIN BUTTON
-   ===================================== */
+/* =========================
+ADMIN OPEN
+========================= */
 
-$("adminButton").addEventListener(
-"click",
-function(){
+$("adminButton").addEventListener("click",function(){
 
 $("adminPanel").style.display="block";
 
@@ -573,174 +261,79 @@ block:"start"
 
 checkLogin();
 
-}
-);
-
-
-/* =====================================
-   CATEGORY BUTTONS
-   ===================================== */
-
-document.querySelectorAll(
-".cats button"
-).forEach(function(button){
-
-button.addEventListener(
-"click",
-function(){
-
-const category =
-button.dataset.category;
-
-if(category==="All"){
-render(products);
-return;
-}
-
-render(
-products.filter(function(product){
-return product.category===category;
-})
-);
-
-}
-);
-
 });
 
 
-/* =====================================
-   SEARCH
-   ===================================== */
-
-$("search").addEventListener(
-"input",
-function(){
-
-const q =
-this.value.toLowerCase().trim();
-
-render(
-products.filter(function(product){
-
-return (
-(product.name||"")
-.toLowerCase()
-.includes(q)
-||
-(product.category||"")
-.toLowerCase()
-.includes(q)
-);
-
-})
-);
-
-}
-);
-
-
-/* =====================================
-   LOAD PRODUCTS
-   ===================================== */
+/* =========================
+LOAD PRODUCTS
+========================= */
 
 async function loadProducts(){
 
-try{
-
-const result =
-await supabaseClient
+const result=await supabaseClient
 .from("products")
 .select("*")
-.order(
-"created_at",
-{ascending:false}
-);
+.order("created_at",{ascending:false});
 
 if(result.error){
 
 console.error(result.error);
 
-$("grid").innerHTML =
+$("grid").innerHTML=
 "<p>Products load nahi ho rahe.</p>";
 
 return;
-
 }
 
-products =
-result.data || [];
+products=result.data||[];
 
 render(products);
 
 }
-catch(error){
-
-console.error(error);
-
-$("grid").innerHTML =
-"<p>Website data load error.</p>";
-
-}
-
-}
 
 
-/* =====================================
-   RENDER PRODUCTS
-   ===================================== */
+/* =========================
+DISPLAY
+========================= */
 
 function render(list){
 
-$("count").textContent =
-list.length + " products";
+$("count").textContent=
+list.length+" products";
 
 if(!list.length){
 
-$("grid").innerHTML =
+$("grid").innerHTML=
 "<p>No products found.</p>";
 
 return;
-
 }
 
-$("grid").innerHTML =
+$("grid").innerHTML=
 list.map(function(p){
 
-const image =
-p.image_url
+const image=p.image_url
 ?
-'<img src="'+
-safe(p.image_url)+
-'" alt="'+
-safe(p.name)+
-'">'
+'<img src="'+safe(p.image_url)+'" alt="'+safe(p.name)+'">'
 :
 '<span style="font-size:75px">🛍️</span>';
 
-const buy =
-p.affiliate_url
+const buy=p.affiliate_url
 ?
-'<a class="buy" href="'+
-safe(p.affiliate_url)+
-'" target="_blank" rel="noopener">Buy Now</a>'
+'<a class="buy" href="'+safe(p.affiliate_url)+'" target="_blank" rel="noopener">Buy Now</a>'
 :
 '<span class="buy">Link coming soon</span>';
 
 return `
 <article class="card">
 
-<div class="pic">
-${image}
-</div>
+<div class="pic">${image}</div>
 
 <div class="body">
 
 <h3>${safe(p.name)}</h3>
 
-<div class="price">
-${safe(p.price)}
-</div>
+<div class="price">${safe(p.price)}</div>
 
 ${buy}
 
@@ -754,33 +347,82 @@ ${buy}
 }
 
 
-/* =====================================
-   CHECK LOGIN
-   ===================================== */
+/* =========================
+SEARCH
+========================= */
+
+$("search").addEventListener("input",function(){
+
+const q=this.value.toLowerCase();
+
+render(
+products.filter(function(p){
+
+return (
+(p.name||"").toLowerCase().includes(q) ||
+(p.category||"").toLowerCase().includes(q)
+);
+
+})
+);
+
+});
+
+
+/* =========================
+CATEGORY
+========================= */
+
+document.querySelectorAll(".cats button")
+.forEach(function(btn){
+
+btn.addEventListener("click",function(){
+
+const category=btn.dataset.cat;
+
+if(category==="All"){
+render(products);
+return;
+}
+
+render(
+products.filter(function(p){
+return p.category===category;
+})
+);
+
+});
+
+});
+
+
+/* =========================
+CHECK LOGIN
+========================= */
 
 async function checkLogin(){
 
-const result =
+const result=
 await supabaseClient.auth.getUser();
 
 if(result.data.user){
 
 showDashboard();
 
-}
-else{
+}else{
 
 $("loginSection").style.display="block";
 $("dashboard").style.display="none";
+$("resetSection").style.display="none";
 
 }
 
 }
 
 
-/* =====================================
-   LOGIN
-   ===================================== */
+/* =========================
+LOGIN
+========================= */
 
 $("loginButton").addEventListener(
 "click",
@@ -789,25 +431,21 @@ login
 
 async function login(){
 
-const email =
-$("loginEmail").value.trim();
+const email=$("loginEmail").value.trim();
+const password=$("loginPassword").value;
 
-const password =
-$("loginPassword").value;
+if(!email||!password){
 
-if(!email || !password){
-
-$("loginMsg").textContent =
+$("loginMsg").textContent=
 "Email aur password enter karo.";
 
 return;
-
 }
 
-$("loginMsg").textContent =
+$("loginMsg").textContent=
 "Logging in...";
 
-const result =
+const result=
 await supabaseClient.auth
 .signInWithPassword({
 email:email,
@@ -816,14 +454,13 @@ password:password
 
 if(result.error){
 
-$("loginMsg").textContent =
+$("loginMsg").textContent=
 result.error.message;
 
 return;
-
 }
 
-$("loginMsg").textContent =
+$("loginMsg").textContent=
 "Login successful.";
 
 showDashboard();
@@ -831,13 +468,137 @@ showDashboard();
 }
 
 
-/* =====================================
-   DASHBOARD
-   ===================================== */
+/* =========================
+FORGOT PASSWORD
+========================= */
+
+$("forgotButton").addEventListener(
+"click",
+sendReset
+);
+
+async function sendReset(){
+
+const email=
+$("loginEmail").value.trim();
+
+if(!email){
+
+$("loginMsg").textContent=
+"Pehle apna email enter karo.";
+
+return;
+}
+
+$("loginMsg").textContent=
+"Reset email bhej rahe hain...";
+
+const result=
+await supabaseClient.auth
+.resetPasswordForEmail(
+email,
+{
+redirectTo:
+window.location.origin+
+window.location.pathname+
+"?reset=true"
+}
+);
+
+if(result.error){
+
+$("loginMsg").textContent=
+result.error.message;
+
+return;
+}
+
+$("loginMsg").textContent=
+"Password reset email bhej diya gaya hai. Email check karo.";
+
+}
+
+
+/* =========================
+RESET PASSWORD
+========================= */
+
+$("updatePasswordButton")
+.addEventListener(
+"click",
+updatePassword
+);
+
+async function updatePassword(){
+
+const password=
+$("newPassword").value;
+
+const confirm=
+$("confirmPassword").value;
+
+if(!password||!confirm){
+
+$("resetMsg").textContent=
+"Dono password fields bharo.";
+
+return;
+}
+
+if(password!==confirm){
+
+$("resetMsg").textContent=
+"Passwords match nahi kar rahe.";
+
+return;
+}
+
+if(password.length<6){
+
+$("resetMsg").textContent=
+"Password kam se kam 6 characters ka rakho.";
+
+return;
+}
+
+$("resetMsg").textContent=
+"Password update ho raha hai...";
+
+const result=
+await supabaseClient.auth
+.updateUser({
+password:password
+});
+
+if(result.error){
+
+$("resetMsg").textContent=
+result.error.message;
+
+return;
+}
+
+$("resetMsg").textContent=
+"Password successfully update ho gaya.";
+
+setTimeout(function(){
+
+$("resetSection").style.display="none";
+$("loginSection").style.display="block";
+
+},1500);
+
+}
+
+
+/* =========================
+SHOW DASHBOARD
+========================= */
 
 function showDashboard(){
 
 $("loginSection").style.display="none";
+$("resetSection").style.display="none";
 $("dashboard").style.display="block";
 
 loadAdminProducts();
@@ -845,9 +606,9 @@ loadAdminProducts();
 }
 
 
-/* =====================================
-   LOGOUT
-   ===================================== */
+/* =========================
+LOGOUT
+========================= */
 
 $("logoutButton").addEventListener(
 "click",
@@ -858,16 +619,16 @@ await supabaseClient.auth.signOut();
 $("dashboard").style.display="none";
 $("loginSection").style.display="block";
 
-$("loginMsg").textContent =
+$("loginMsg").textContent=
 "Logged out.";
 
 }
 );
 
 
-/* =====================================
-   SAVE PRODUCT
-   ===================================== */
+/* =========================
+SAVE PRODUCT
+========================= */
 
 $("saveButton").addEventListener(
 "click",
@@ -876,136 +637,114 @@ saveProduct
 
 async function saveProduct(){
 
-const name =
-$("productName").value.trim();
+const name=$("productName").value.trim();
+const price=$("productPrice").value.trim();
+const category=$("productCategory").value;
+const image_url=$("productImage").value.trim();
+const platform=$("productPlatform").value;
+const affiliate_url=$("productAffiliate").value.trim();
 
-const price =
-$("productPrice").value.trim();
+if(!name||!price||!affiliate_url){
 
-const category =
-$("productCategory").value;
-
-const image_url =
-$("productImage").value.trim();
-
-const platform =
-$("productPlatform").value;
-
-const affiliate_url =
-$("productAffiliate").value.trim();
-
-if(!name || !price || !affiliate_url){
-
-$("adminMsg").textContent =
+$("adminMsg").textContent=
 "Name, price aur affiliate link zaroori hain.";
 
 return;
-
 }
 
-$("adminMsg").textContent =
+$("adminMsg").textContent=
 "Saving...";
 
 let result;
 
 if(editingId){
 
-result =
+result=
 await supabaseClient
 .from("products")
 .update({
-name:name,
-price:price,
-category:category,
-image_url:image_url,
-platform:platform,
-affiliate_url:affiliate_url
+name,
+price,
+category,
+image_url,
+platform,
+affiliate_url
 })
 .eq("id",editingId);
 
-}
-else{
+}else{
 
-result =
+result=
 await supabaseClient
 .from("products")
 .insert([{
-name:name,
-price:price,
-category:category,
-image_url:image_url,
-platform:platform,
-affiliate_url:affiliate_url
+name,
+price,
+category,
+image_url,
+platform,
+affiliate_url
 }]);
 
 }
 
 if(result.error){
 
-$("adminMsg").textContent =
+$("adminMsg").textContent=
 result.error.message;
 
 return;
-
 }
 
-$("adminMsg").textContent =
+$("adminMsg").textContent=
 "Product saved successfully.";
 
 clearForm();
 
 await loadProducts();
-
 await loadAdminProducts();
 
 }
 
 
-/* =====================================
-   LOAD ADMIN PRODUCTS
-   ===================================== */
+/* =========================
+ADMIN PRODUCT LIST
+========================= */
 
 async function loadAdminProducts(){
 
-const result =
+const result=
 await supabaseClient
 .from("products")
 .select("*")
-.order(
-"created_at",
-{ascending:false}
-);
+.order("created_at",{ascending:false});
 
 if(result.error){
 
-$("adminProducts").innerHTML =
+$("adminProducts").innerHTML=
 "<p>"+safe(result.error.message)+"</p>";
 
 return;
-
 }
 
-const list =
-result.data || [];
+const list=result.data||[];
 
 if(!list.length){
 
-$("adminProducts").innerHTML =
+$("adminProducts").innerHTML=
 "<p>No products yet.</p>";
 
 return;
-
 }
 
-$("adminProducts").innerHTML =
+$("adminProducts").innerHTML=
 list.map(function(p){
 
 return `
 <div class="adminProduct">
 
 <div>
-<b>${safe(p.name)}</b>
-<br>
+<b>${safe(p.name)}</b><br>
 ${safe(p.price)} • ${safe(p.platform)}
 </div>
 
@@ -1033,14 +772,13 @@ onclick="deleteProduct('${safe(p.id)}')">
 }
 
 
-/* =====================================
-   EDIT PRODUCT
-   ===================================== */
+/* =========================
+EDIT
+========================= */
 
-window.editProduct =
-async function(id){
+window.editProduct=async function(id){
 
-const result =
+const result=
 await supabaseClient
 .from("products")
 .select("*")
@@ -1051,45 +789,36 @@ if(result.error){
 
 alert(result.error.message);
 return;
-
 }
 
 const p=result.data;
 
 editingId=p.id;
 
-$("productName").value=p.name || "";
-$("productPrice").value=p.price || "";
-$("productCategory").value=p.category || "Fashion";
-$("productImage").value=p.image_url || "";
-$("productPlatform").value=p.platform || "Meesho";
-$("productAffiliate").value=p.affiliate_url || "";
+$("productName").value=p.name||"";
+$("productPrice").value=p.price||"";
+$("productCategory").value=p.category||"Fashion";
+$("productImage").value=p.image_url||"";
+$("productPlatform").value=p.platform||"Meesho";
+$("productAffiliate").value=p.affiliate_url||"";
 
-$("adminMsg").textContent =
+$("adminMsg").textContent=
 "Editing: "+p.name;
-
-window.scrollTo({
-top:$("adminPanel").offsetTop,
-behavior:"smooth"
-});
 
 };
 
 
-/* =====================================
-   DELETE PRODUCT
-   ===================================== */
+/* =========================
+DELETE
+========================= */
 
-window.deleteProduct =
-async function(id){
+window.deleteProduct=async function(id){
 
-if(!confirm(
-"Is product ko delete karna hai?"
-)){
+if(!confirm("Is product ko delete karna hai?")){
 return;
 }
 
-const result =
+const result=
 await supabaseClient
 .from("products")
 .delete()
@@ -1099,7 +828,6 @@ if(result.error){
 
 alert(result.error.message);
 return;
-
 }
 
 await loadProducts();
@@ -1108,9 +836,9 @@ await loadAdminProducts();
 };
 
 
-/* =====================================
-   CLEAR FORM
-   ===================================== */
+/* =========================
+CLEAR
+========================= */
 
 $("clearButton").addEventListener(
 "click",
@@ -1131,13 +859,43 @@ $("adminMsg").textContent="";
 }
 
 
-/* =====================================
-   START
-   ===================================== */
+/* =========================
+PASSWORD RESET DETECTION
+========================= */
+
+async function checkResetMode(){
+
+const params=
+new URLSearchParams(
+window.location.search
+);
+
+if(params.get("reset")==="true"){
+
+$("adminPanel").style.display="block";
+
+$("loginSection").style.display="none";
+$("dashboard").style.display="none";
+$("resetSection").style.display="block";
+
+$("adminPanel").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+}
+
+
+/* =========================
+START
+========================= */
 
 loadProducts();
+
+checkResetMode();
 
 </script>
 
 </body>
-  </html>
+</html>
