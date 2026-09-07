@@ -8,51 +8,194 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#f7f8fc;color:#151827}
-header{background:#111827;color:#fff;padding:14px 5%;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:9999}
+header{background:#111827;color:#fff;padding:14px 5%;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:10}
 .logo{font-size:26px;font-weight:900;white-space:nowrap}
 .logo span{color:#fbbf24}
-.search{flex:1;padding:13px 15px;border:0;border-radius:12px;font-size:15px;min-width:0}
-.adminBtn{background:#fbbf24;color:#111827;border:0;padding:12px 16px;border-radius:10px;font-weight:800;cursor:pointer}
-.hero{padding:55px 6%;text-align:center;background:linear-gradient(120deg,#eef2ff,#fff7ed)}
+.search{flex:1;max-width:600px;padding:13px 16px;border:0;border-radius:12px;font-size:15px}
+.adminBtn{background:#fbbf24;color:#111827;border:0;padding:11px 15px;border-radius:10px;font-weight:800;cursor:pointer}
+
+.hero{padding:50px 6%;text-align:center;background:linear-gradient(120deg,#eef2ff,#fff7ed)}
 .hero h1{font-size:clamp(32px,6vw,56px);margin:0 0 12px}
 .hero p{font-size:18px;color:#64748b}
+
 .cats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
 .cats button{border:1px solid #dbe2ea;background:#fff;padding:10px 17px;border-radius:99px;cursor:pointer}
+
 .features{background:#fff;padding:18px 6%;display:flex;justify-content:center;gap:28px;flex-wrap:wrap;border-bottom:1px solid #eee}
+
 .wrap{max-width:1250px;margin:auto;padding:32px 6%}
 .top{display:flex;justify-content:space-between;align-items:center}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+
 .card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px #11182712}
 .pic{height:260px;background:#eef0f4;display:flex;align-items:center;justify-content:center}
 .pic img{width:100%;height:100%;object-fit:cover}
+
 .body{padding:17px}
 .body h3{margin:0 0 8px}
 .price{font-size:21px;font-weight:800;margin-bottom:14px}
-.buy{display:block;background:#111827;color:#fff;text-decoration:none;text-align:center;padding:11px;border-radius:10px;font-weight:700}
-.notice{margin-top:32px;padding:17px;background:#fff;border-radius:14px;color:#526174;border:1px solid #e5e7eb}
-footer{margin-top:30px;background:#111827;color:#cbd5e1;padding:35px 6%;text-align:center}
+
+.buy{
+display:block;
+color:#fff;
+text-decoration:none;
+text-align:center;
+padding:11px;
+border-radius:10px;
+font-weight:700;
+background:#111827
+}
+
+.notice{
+margin-top:32px;
+padding:17px;
+background:#fff;
+border-radius:14px;
+color:#526174;
+border:1px solid #e5e7eb
+}
+
+footer{
+margin-top:30px;
+background:#111827;
+color:#cbd5e1;
+padding:35px 6%;
+text-align:center
+}
+
 .small{font-size:12px}
 
-#adminPanel{display:none;max-width:900px;margin:25px auto;padding:25px;background:#fff;border-radius:18px;box-shadow:0 8px 30px #11182718}
-.loginBox{max-width:420px;margin:auto;display:grid;gap:12px}
-.loginBox input,.form input,.form select{width:100%;padding:13px;border:1px solid #dbe2ea;border-radius:10px;font-size:15px}
-.loginBox button,.form button{padding:13px;border:0;border-radius:10px;background:#111827;color:#fff;font-weight:700;cursor:pointer}
-.msg{padding:10px;border-radius:8px;background:#f1f5f9;margin-top:5px}
-.linkBtn{border:0;background:none;color:#2563eb;cursor:pointer;padding:0;font-weight:700}
-#dashboard,#resetSection{display:none}
-.adminHead{display:flex;justify-content:space-between;align-items:center}
-.logout{padding:9px 13px;border:0;border-radius:8px;background:#ef4444;color:#fff;font-weight:700}
+/* ADMIN */
+
+#adminPanel{
+display:none;
+background:#fff;
+max-width:950px;
+margin:25px auto;
+padding:25px;
+border-radius:18px;
+box-shadow:0 8px 30px #11182718
+}
+
+.adminHead{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px
+}
+
 .form{display:grid;gap:12px}
-.adminProduct{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:13px;margin-top:10px;border:1px solid #e5e7eb;border-radius:12px}
-.adminActions{display:flex;gap:7px}
-.adminActions button{border:0;padding:8px 11px;border-radius:8px;cursor:pointer}
+
+.form input,
+.form select{
+width:100%;
+padding:13px;
+border:1px solid #dbe2ea;
+border-radius:10px;
+font-size:15px
+}
+
+.form button,
+.logout{
+padding:13px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:#fff;
+font-weight:700;
+cursor:pointer
+}
+
+.logout{background:#ef4444}
+
+.fileBox{
+border:2px dashed #cbd5e1;
+border-radius:12px;
+padding:18px;
+text-align:center;
+background:#f8fafc
+}
+
+.fileBox input{
+border:0;
+padding:0;
+background:transparent
+}
+
+.preview{
+display:none;
+width:150px;
+height:150px;
+object-fit:cover;
+border-radius:12px;
+margin-top:10px
+}
+
+.loginBox{
+display:grid;
+gap:12px;
+max-width:400px;
+margin:auto
+}
+
+.loginBox input{
+padding:13px;
+border:1px solid #ddd;
+border-radius:10px
+}
+
+.loginBox button{
+padding:13px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:#fff;
+font-weight:700
+}
+
+.msg{
+padding:10px;
+border-radius:8px;
+background:#f1f5f9;
+min-height:20px
+}
+
+.productAdmin{
+border:1px solid #e5e7eb;
+padding:12px;
+border-radius:12px;
+margin-top:10px;
+display:flex;
+justify-content:space-between;
+gap:10px;
+align-items:center
+}
+
+.productAdmin img{
+width:55px;
+height:55px;
+object-fit:cover;
+border-radius:8px;
+vertical-align:middle;
+margin-right:10px
+}
+
+.productAdmin button{
+border:0;
+padding:8px 12px;
+border-radius:8px;
+cursor:pointer
+}
+
+.hidden{display:none}
 
 @media(max-width:600px){
-header{padding:11px 3%}
-.logo{font-size:20px}
-.search{font-size:13px}
-.adminBtn{padding:10px;font-size:12px}
-#adminPanel{margin:15px 3%;padding:18px}
+header{padding:11px 4%;gap:7px}
+.logo{font-size:21px}
+.search{min-width:0}
+.adminBtn{padding:9px}
+#adminPanel{margin:15px 4%;padding:18px}
+.pic{height:230px}
 }
 </style>
 </head>
@@ -60,141 +203,255 @@ header{padding:11px 3%}
 <body>
 
 <header>
-<div class="logo">Deal<span>Nest</span></div>
-<input id="search" class="search" placeholder="Search products...">
-<button id="adminButton" class="adminBtn" type="button">🔐 Admin</button>
+
+<div class="logo">
+Deal<span>Nest</span>
+</div>
+
+<input
+id="search"
+class="search"
+placeholder="Search products..."
+oninput="searchProducts()">
+
+<button class="adminBtn" onclick="openAdmin()">
+🔐 Admin
+</button>
+
 </header>
 
 <section class="hero">
+
 <h1>Shop smarter. Find better deals.</h1>
-<p>Discover products and choose where you want to buy.</p>
+
+<p>
+Discover products and choose where you want to buy.
+</p>
 
 <div class="cats">
-<button data-cat="All">All</button>
-<button data-cat="Fashion">Fashion</button>
-<button data-cat="Beauty">Beauty</button>
-<button data-cat="Electronics">Electronics</button>
-<button data-cat="Home">Home</button>
+
+<button onclick="showAll()">All</button>
+
+<button onclick="cat('Fashion')">
+Fashion
+</button>
+
+<button onclick="cat('Beauty')">
+Beauty
+</button>
+
+<button onclick="cat('Electronics')">
+Electronics
+</button>
+
+<button onclick="cat('Home')">
+Home
+</button>
+
 </div>
+
 </section>
 
 <div class="features">
+
 <b>✓ Curated picks</b>
 <b>✓ Multiple stores</b>
 <b>✓ Easy shopping</b>
 <b>✓ Affiliate transparency</b>
+
 </div>
 
 <main class="wrap">
+
 <div class="top">
+
 <h2>Editor's Picks</h2>
+
 <span id="count"></span>
+
 </div>
 
 <div id="grid" class="grid"></div>
 
 <div class="notice">
+
 <b>Affiliate Disclosure:</b>
-Some links on DealNest are affiliate links. If you make a purchase through an eligible link, DealNest may earn a commission.
+
+Some links on DealNest are affiliate links.
+If you make a purchase through an eligible link,
+DealNest may earn a commission.
+
 </div>
+
 </main>
+
+
+<!-- ADMIN -->
 
 <section id="adminPanel">
 
-<!-- LOGIN -->
 <div id="loginSection">
 
 <h2>🔐 DealNest Admin Login</h2>
 
 <div class="loginBox">
 
-<input id="loginEmail" type="email" placeholder="Admin email">
-<input id="loginPassword" type="password" placeholder="Password">
+<input
+id="loginEmail"
+type="email"
+placeholder="Admin email">
 
-<button id="loginButton" type="button">Login</button>
+<input
+id="loginPassword"
+type="password"
+placeholder="Password">
 
-<button id="forgotButton" class="linkBtn" type="button">
-Forgot password?
+<button onclick="login()">
+Login
 </button>
 
 <div id="loginMsg" class="msg"></div>
 
 </div>
-</div>
-
-
-<!-- RESET PASSWORD -->
-<div id="resetSection">
-
-<h2>🔄 Create New Password</h2>
-
-<div class="loginBox">
-
-<input id="newPassword" type="password" placeholder="New password">
-<input id="confirmPassword" type="password" placeholder="Confirm new password">
-
-<button id="updatePasswordButton" type="button">
-Update Password
-</button>
-
-<div id="resetMsg" class="msg"></div>
 
 </div>
-</div>
 
 
-<!-- DASHBOARD -->
-<div id="dashboard">
+<div id="dashboard" class="hidden">
 
 <div class="adminHead">
-<h2>🛠️ Product Manager</h2>
-<button id="logoutButton" class="logout" type="button">Logout</button>
+
+<h2>
+🛠️ Product Manager
+</h2>
+
+<button class="logout" onclick="logout()">
+Logout
+</button>
+
 </div>
 
 <hr>
 
-<h3>Add / Edit Product</h3>
+<h3>
+Add / Edit Product
+</h3>
+
 
 <div class="form">
 
-<input id="productName" placeholder="Product name">
-<input id="productPrice" placeholder="Price e.g. ₹399">
+<input
+id="productName"
+placeholder="Product name">
+
+<input
+id="productPrice"
+placeholder="Price e.g. ₹420">
+
 
 <select id="productCategory">
-<option value="Fashion">Fashion</option>
-<option value="Beauty">Beauty</option>
-<option value="Electronics">Electronics</option>
-<option value="Home">Home</option>
+
+<option value="Fashion">
+Fashion
+</option>
+
+<option value="Beauty">
+Beauty
+</option>
+
+<option value="Electronics">
+Electronics
+</option>
+
+<option value="Home">
+Home
+</option>
+
 </select>
 
-<input id="productImage" placeholder="Product image URL">
+
+<div class="fileBox">
+
+<b>📷 Product image</b>
+
+<br><br>
+
+<input
+id="productImageFile"
+type="file"
+accept="image/*"
+onchange="previewImage(event)">
+
+<img
+id="preview"
+class="preview"
+alt="Preview">
+
+</div>
+
 
 <select id="productPlatform">
-<option value="Meesho">Meesho</option>
-<option value="Amazon">Amazon</option>
-<option value="Flipkart">Flipkart</option>
-<option value="Myntra">Myntra</option>
+
+<option value="Meesho">
+Meesho
+</option>
+
+<option value="Amazon">
+Amazon
+</option>
+
+<option value="Flipkart">
+Flipkart
+</option>
+
+<option value="Myntra">
+Myntra
+</option>
+
 </select>
 
-<input id="productAffiliate" placeholder="Affiliate link">
 
-<button id="saveButton" type="button">➕ Save Product</button>
-<button id="clearButton" type="button">Clear</button>
+<input
+id="productAffiliate"
+placeholder="Affiliate link">
+
+
+<button onclick="saveProduct()">
+➕ Save Product
+</button>
+
+
+<button onclick="clearForm()">
+Clear
+</button>
+
 
 <div id="adminMsg" class="msg"></div>
 
 </div>
 
-<h3>Your Products</h3>
+
+<h3>
+Your Products
+</h3>
+
 <div id="adminProducts"></div>
 
 </div>
 
 </section>
 
+
 <footer>
-<b>DealNest</b><br>
-<span class="small">A multi-store affiliate shopping platform • © 2026</span>
+
+<b>DealNest</b>
+
+<br>
+
+<span class="small">
+A multi-store affiliate shopping platform • © 2026
+</span>
+
 </footer>
 
 
@@ -202,21 +459,19 @@ Update Password
 
 <script>
 
-/* =========================
-SUPABASE
-========================= */
+/* SUPABASE */
 
 const SUPABASE_URL =
 "https://vqpxxlztaqfyrqifsqfh.supabase.co";
 
+
 /*
-IMPORTANT:
-PASTE YOUR SUPABASE PUBLISHABLE KEY BELOW.
-DO NOT USE SERVICE ROLE / SECRET KEY.
+YAHAN APNI SUPABASE PUBLISHABLE KEY PASTE KARO
 */
 
 const SUPABASE_KEY =
 "sb_publishable_a-FEj0g60Zz2IOOc4VifbQ_EUZaFbCi";
+
 
 const supabaseClient =
 supabase.createClient(
@@ -224,122 +479,132 @@ SUPABASE_URL,
 SUPABASE_KEY
 );
 
-let products=[];
-let editingId=null;
+
+const BUCKET =
+"product-images";
 
 
-/* =========================
-HELPER
-========================= */
+let products = [];
 
-function $(id){
-return document.getElementById(id);
-}
+let editingId = null;
 
-function safe(value){
-return String(value||"")
+let oldImageUrl = "";
+
+
+/* SECURITY */
+
+function esc(value){
+
+return String(value || "")
 .replace(/&/g,"&amp;")
 .replace(/</g,"&lt;")
 .replace(/>/g,"&gt;")
 .replace(/"/g,"&quot;")
 .replace(/'/g,"&#039;");
+
 }
 
 
-/* =========================
-ADMIN OPEN
-========================= */
-
-$("adminButton").addEventListener("click",function(){
-
-$("adminPanel").style.display="block";
-
-$("adminPanel").scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-checkLogin();
-
-});
-
-
-/* =========================
-LOAD PRODUCTS
-========================= */
+/* LOAD PRODUCTS */
 
 async function loadProducts(){
 
-const result=await supabaseClient
+const {data,error} =
+await supabaseClient
 .from("products")
 .select("*")
 .order("created_at",{ascending:false});
 
-if(result.error){
 
-console.error(result.error);
+if(error){
 
-$("grid").innerHTML=
-"<p>Products load nahi ho rahe.</p>";
+console.error(error);
+
+document.getElementById("grid").innerHTML =
+"<p>Products load nahi ho rahe. Supabase settings check karo.</p>";
 
 return;
+
 }
 
-products=result.data||[];
+products = data || [];
 
 render(products);
 
 }
 
 
-/* =========================
-DISPLAY
-========================= */
+/* DISPLAY */
 
 function render(list){
 
-$("count").textContent=
-list.length+" products";
+document.getElementById("count").textContent =
+list.length + " products";
 
-if(!list.length){
 
-$("grid").innerHTML=
-"<p>No products found.</p>";
+document.getElementById("grid").innerHTML =
 
-return;
-}
-
-$("grid").innerHTML=
 list.map(function(p){
 
-const image=p.image_url
+const image =
+
+p.image_url
+
 ?
-'<img src="'+safe(p.image_url)+'" alt="'+safe(p.name)+'">'
+
+'<img src="' +
+esc(p.image_url) +
+'" alt="' +
+esc(p.name) +
+'">'
+
 :
+
 '<span style="font-size:75px">🛍️</span>';
 
-const buy=p.affiliate_url
+
+const button =
+
+p.affiliate_url
+
 ?
-'<a class="buy" href="'+safe(p.affiliate_url)+'" target="_blank" rel="noopener">Buy Now</a>'
+
+'<a class="buy" href="' +
+esc(p.affiliate_url) +
+'" target="_blank" rel="noopener">' +
+'Buy on ' +
+esc(p.platform || "Store") +
+'</a>'
+
 :
+
 '<span class="buy">Link coming soon</span>';
 
+
 return `
+
 <article class="card">
 
-<div class="pic">${image}</div>
+<div class="pic">
+${image}
+</div>
 
 <div class="body">
 
-<h3>${safe(p.name)}</h3>
+<h3>
+${esc(p.name)}
+</h3>
 
-<div class="price">${safe(p.price)}</div>
+<div class="price">
+${esc(p.price)}
+</div>
 
-${buy}
+${button}
 
 </div>
 
 </article>
+
 `;
 
 }).join("");
@@ -347,120 +612,129 @@ ${buy}
 }
 
 
-/* =========================
-SEARCH
-========================= */
+/* SEARCH */
 
-$("search").addEventListener("input",function(){
+function searchProducts(){
 
-const q=this.value.toLowerCase();
+const q =
+document.getElementById("search")
+.value
+.toLowerCase();
+
 
 render(
+
 products.filter(function(p){
 
 return (
-(p.name||"").toLowerCase().includes(q) ||
-(p.category||"").toLowerCase().includes(q)
+
+(p.name || "")
+.toLowerCase()
+.includes(q)
+
+||
+
+(p.category || "")
+.toLowerCase()
+.includes(q)
+
 );
 
 })
+
 );
 
-});
-
-
-/* =========================
-CATEGORY
-========================= */
-
-document.querySelectorAll(".cats button")
-.forEach(function(btn){
-
-btn.addEventListener("click",function(){
-
-const category=btn.dataset.cat;
-
-if(category==="All"){
-render(products);
-return;
 }
+
+
+/* CATEGORY */
+
+function cat(category){
 
 render(
+
 products.filter(function(p){
-return p.category===category;
+
+return p.category === category;
+
 })
+
 );
-
-});
-
-});
-
-
-/* =========================
-CHECK LOGIN
-========================= */
-
-async function checkLogin(){
-
-const result=
-await supabaseClient.auth.getUser();
-
-if(result.data.user){
-
-showDashboard();
-
-}else{
-
-$("loginSection").style.display="block";
-$("dashboard").style.display="none";
-$("resetSection").style.display="none";
-
-}
 
 }
 
 
-/* =========================
-LOGIN
-========================= */
+function showAll(){
 
-$("loginButton").addEventListener(
-"click",
-login
-);
+render(products);
+
+}
+
+
+/* OPEN ADMIN */
+
+function openAdmin(){
+
+document.getElementById("adminPanel")
+.style.display = "block";
+
+
+document.getElementById("adminPanel")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+
+checkUser();
+
+}
+
+
+/* LOGIN */
 
 async function login(){
 
-const email=$("loginEmail").value.trim();
-const password=$("loginPassword").value;
+const email =
+document.getElementById("loginEmail")
+.value
+.trim();
 
-if(!email||!password){
 
-$("loginMsg").textContent=
-"Email aur password enter karo.";
+const password =
+document.getElementById("loginPassword")
+.value;
 
-return;
-}
 
-$("loginMsg").textContent=
+const msg =
+document.getElementById("loginMsg");
+
+
+msg.textContent =
 "Logging in...";
 
-const result=
+
+const {error} =
 await supabaseClient.auth
 .signInWithPassword({
+
 email:email,
+
 password:password
+
 });
 
-if(result.error){
 
-$("loginMsg").textContent=
-result.error.message;
+if(error){
+
+msg.textContent =
+error.message;
 
 return;
+
 }
 
-$("loginMsg").textContent=
+
+msg.textContent =
 "Login successful.";
 
 showDashboard();
@@ -468,434 +742,534 @@ showDashboard();
 }
 
 
-/* =========================
-FORGOT PASSWORD
-========================= */
+/* CHECK LOGIN */
 
-$("forgotButton").addEventListener(
-"click",
-sendReset
-);
+async function checkUser(){
 
-async function sendReset(){
-
-const email=
-$("loginEmail").value.trim();
-
-if(!email){
-
-$("loginMsg").textContent=
-"Pehle apna email enter karo.";
-
-return;
-}
-
-$("loginMsg").textContent=
-"Reset email bhej rahe hain...";
-
-const result=
+const {data} =
 await supabaseClient.auth
-.resetPasswordForEmail(
-email,
-{
-redirectTo:
-window.location.origin+
-window.location.pathname+
-"?reset=true"
-}
-);
+.getUser();
 
-if(result.error){
 
-$("loginMsg").textContent=
-result.error.message;
+if(data.user){
 
-return;
+showDashboard();
+
 }
 
-$("loginMsg").textContent=
-"Password reset email bhej diya gaya hai. Email check karo.";
+else{
+
+document.getElementById("loginSection")
+.style.display = "block";
+
+document.getElementById("dashboard")
+.classList.add("hidden");
+
+}
 
 }
 
 
-/* =========================
-RESET PASSWORD
-========================= */
-
-$("updatePasswordButton")
-.addEventListener(
-"click",
-updatePassword
-);
-
-async function updatePassword(){
-
-const password=
-$("newPassword").value;
-
-const confirm=
-$("confirmPassword").value;
-
-if(!password||!confirm){
-
-$("resetMsg").textContent=
-"Dono password fields bharo.";
-
-return;
-}
-
-if(password!==confirm){
-
-$("resetMsg").textContent=
-"Passwords match nahi kar rahe.";
-
-return;
-}
-
-if(password.length<6){
-
-$("resetMsg").textContent=
-"Password kam se kam 6 characters ka rakho.";
-
-return;
-}
-
-$("resetMsg").textContent=
-"Password update ho raha hai...";
-
-const result=
-await supabaseClient.auth
-.updateUser({
-password:password
-});
-
-if(result.error){
-
-$("resetMsg").textContent=
-result.error.message;
-
-return;
-}
-
-$("resetMsg").textContent=
-"Password successfully update ho gaya.";
-
-setTimeout(function(){
-
-$("resetSection").style.display="none";
-$("loginSection").style.display="block";
-
-},1500);
-
-}
-
-
-/* =========================
-SHOW DASHBOARD
-========================= */
+/* DASHBOARD */
 
 function showDashboard(){
 
-$("loginSection").style.display="none";
-$("resetSection").style.display="none";
-$("dashboard").style.display="block";
+document.getElementById("loginSection")
+.style.display = "none";
+
+
+document.getElementById("dashboard")
+.classList.remove("hidden");
+
 
 loadAdminProducts();
 
 }
 
 
-/* =========================
-LOGOUT
-========================= */
+/* LOGOUT */
 
-$("logoutButton").addEventListener(
-"click",
-async function(){
+async function logout(){
 
 await supabaseClient.auth.signOut();
 
-$("dashboard").style.display="none";
-$("loginSection").style.display="block";
 
-$("loginMsg").textContent=
-"Logged out.";
+document.getElementById("loginSection")
+.style.display = "block";
 
+
+document.getElementById("dashboard")
+.classList.add("hidden");
+
+}
+
+
+/* IMAGE PREVIEW */
+
+function previewImage(event){
+
+const file =
+event.target.files[0];
+
+
+const preview =
+document.getElementById("preview");
+
+
+if(!file){
+
+preview.style.display = "none";
+
+return;
+
+}
+
+
+preview.src =
+URL.createObjectURL(file);
+
+
+preview.style.display =
+"block";
+
+}
+
+
+/* UPLOAD IMAGE */
+
+async function uploadImage(file){
+
+const ext =
+(file.name.split(".").pop() || "jpg")
+.toLowerCase()
+.replace(/[^a-z0-9]/g,"");
+
+
+const path =
+Date.now() +
+"-" +
+Math.random()
+.toString(36)
+.slice(2) +
+"." +
+ext;
+
+
+const {error} =
+await supabaseClient
+.storage
+.from(BUCKET)
+.upload(
+path,
+file,
+{
+cacheControl:"3600",
+upsert:false
 }
 );
 
 
-/* =========================
-SAVE PRODUCT
-========================= */
+if(error){
 
-$("saveButton").addEventListener(
-"click",
-saveProduct
-);
+throw error;
+
+}
+
+
+const {data} =
+supabaseClient
+.storage
+.from(BUCKET)
+.getPublicUrl(path);
+
+
+return data.publicUrl;
+
+}
+
+
+/* SAVE PRODUCT */
 
 async function saveProduct(){
 
-const name=$("productName").value.trim();
-const price=$("productPrice").value.trim();
-const category=$("productCategory").value;
-const image_url=$("productImage").value.trim();
-const platform=$("productPlatform").value;
-const affiliate_url=$("productAffiliate").value.trim();
+const name =
+document.getElementById("productName")
+.value
+.trim();
 
-if(!name||!price||!affiliate_url){
 
-$("adminMsg").textContent=
+const price =
+document.getElementById("productPrice")
+.value
+.trim();
+
+
+const category =
+document.getElementById("productCategory")
+.value;
+
+
+const platform =
+document.getElementById("productPlatform")
+.value;
+
+
+const affiliate_url =
+document.getElementById("productAffiliate")
+.value
+.trim();
+
+
+const file =
+document.getElementById("productImageFile")
+.files[0];
+
+
+const msg =
+document.getElementById("adminMsg");
+
+
+if(
+!name ||
+!price ||
+!affiliate_url
+){
+
+msg.textContent =
 "Name, price aur affiliate link zaroori hain.";
 
 return;
+
 }
 
-$("adminMsg").textContent=
-"Saving...";
+
+msg.textContent =
+"Saving product...";
+
+
+try{
+
+let image_url =
+oldImageUrl;
+
+
+if(file){
+
+msg.textContent =
+"Image upload ho rahi hai...";
+
+
+image_url =
+await uploadImage(file);
+
+}
+
+
+const payload = {
+
+name:name,
+
+price:price,
+
+category:category,
+
+image_url:image_url,
+
+platform:platform,
+
+affiliate_url:affiliate_url
+
+};
+
 
 let result;
 
+
 if(editingId){
 
-result=
+result =
 await supabaseClient
 .from("products")
-.update({
-name,
-price,
-category,
-image_url,
-platform,
-affiliate_url
-})
+.update(payload)
 .eq("id",editingId);
 
-}else{
+}
 
-result=
+else{
+
+result =
 await supabaseClient
 .from("products")
-.insert([{
-name,
-price,
-category,
-image_url,
-platform,
-affiliate_url
-}]);
+.insert([payload]);
 
 }
+
 
 if(result.error){
 
-$("adminMsg").textContent=
-result.error.message;
+throw result.error;
 
-return;
 }
 
-$("adminMsg").textContent=
-"Product saved successfully.";
+
+msg.textContent =
+"✅ Product saved successfully.";
+
 
 clearForm();
 
+
 await loadProducts();
+
 await loadAdminProducts();
+
+
+}
+
+catch(e){
+
+console.error(e);
+
+msg.textContent =
+"❌ " + e.message;
+
+}
 
 }
 
 
-/* =========================
-ADMIN PRODUCT LIST
-========================= */
+/* ADMIN PRODUCTS */
 
 async function loadAdminProducts(){
 
-const result=
+const {data,error} =
 await supabaseClient
 .from("products")
 .select("*")
 .order("created_at",{ascending:false});
 
-if(result.error){
 
-$("adminProducts").innerHTML=
-"<p>"+safe(result.error.message)+"</p>";
+const box =
+document.getElementById("adminProducts");
 
-return;
-}
 
-const list=result.data||[];
+if(error){
 
-if(!list.length){
-
-$("adminProducts").innerHTML=
-"<p>No products yet.</p>";
+box.innerHTML =
+"<p>" +
+esc(error.message) +
+"</p>";
 
 return;
+
 }
 
-$("adminProducts").innerHTML=
-list.map(function(p){
+
+box.innerHTML =
+
+(data || [])
+.map(function(p){
+
+const img =
+p.image_url
+
+?
+
+'<img src="' +
+esc(p.image_url) +
+'">'
+
+:
+
+'';
+
 
 return `
-<div class="adminProduct">
+
+<div class="productAdmin">
 
 <div>
-<b>${safe(p.name)}</b><br>
-${safe(p.price)} • ${safe(p.platform)}
+
+${img}
+
+<b>
+${esc(p.name)}
+</b>
+
+<br>
+
+${esc(p.price)}
+•
+${esc(p.platform)}
+
 </div>
 
-<div class="adminActions">
 
-<button
-type="button"
-onclick="editProduct('${safe(p.id)}')">
+<div>
+
+<button onclick='editProduct(${JSON.stringify(p)})'>
 ✏️
 </button>
 
-<button
-type="button"
-onclick="deleteProduct('${safe(p.id)}')">
+<button onclick="deleteProduct('${esc(p.id)}')">
 🗑️
 </button>
 
 </div>
 
 </div>
+
 `;
 
-}).join("");
+})
+.join("")
+
+||
+
+"<p>No products yet.</p>";
 
 }
 
 
-/* =========================
-EDIT
-========================= */
+/* EDIT */
 
-window.editProduct=async function(id){
+function editProduct(p){
 
-const result=
-await supabaseClient
-.from("products")
-.select("*")
-.eq("id",id)
-.single();
+editingId =
+p.id;
 
-if(result.error){
 
-alert(result.error.message);
+oldImageUrl =
+p.image_url || "";
+
+
+document.getElementById("productName")
+.value =
+p.name || "";
+
+
+document.getElementById("productPrice")
+.value =
+p.price || "";
+
+
+document.getElementById("productCategory")
+.value =
+p.category || "Fashion";
+
+
+document.getElementById("productPlatform")
+.value =
+p.platform || "Meesho";
+
+
+document.getElementById("productAffiliate")
+.value =
+p.affiliate_url || "";
+
+
+document.getElementById("productImageFile")
+.value =
+"";
+
+
+document.getElementById("preview")
+.style.display =
+"none";
+
+
+document.getElementById("adminMsg")
+.textContent =
+"Editing: " + p.name;
+
+
+window.scrollTo({
+
+top:
+document.getElementById("adminPanel")
+.offsetTop,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+/* DELETE */
+
+async function deleteProduct(id){
+
+if(
+!confirm("Delete this product?")
+){
+
 return;
+
 }
 
-const p=result.data;
 
-editingId=p.id;
-
-$("productName").value=p.name||"";
-$("productPrice").value=p.price||"";
-$("productCategory").value=p.category||"Fashion";
-$("productImage").value=p.image_url||"";
-$("productPlatform").value=p.platform||"Meesho";
-$("productAffiliate").value=p.affiliate_url||"";
-
-$("adminMsg").textContent=
-"Editing: "+p.name;
-
-};
-
-
-/* =========================
-DELETE
-========================= */
-
-window.deleteProduct=async function(id){
-
-if(!confirm("Is product ko delete karna hai?")){
-return;
-}
-
-const result=
+const {error} =
 await supabaseClient
 .from("products")
 .delete()
 .eq("id",id);
 
-if(result.error){
 
-alert(result.error.message);
+if(error){
+
+alert(error.message);
+
 return;
+
 }
 
+
 await loadProducts();
+
 await loadAdminProducts();
 
-};
+}
 
 
-/* =========================
-CLEAR
-========================= */
-
-$("clearButton").addEventListener(
-"click",
-clearForm
-);
+/* CLEAR */
 
 function clearForm(){
 
-editingId=null;
+editingId =
+null;
 
-$("productName").value="";
-$("productPrice").value="";
-$("productImage").value="";
-$("productAffiliate").value="";
-
-$("adminMsg").textContent="";
-
-}
+oldImageUrl =
+"";
 
 
-/* =========================
-PASSWORD RESET DETECTION
-========================= */
+document.getElementById("productName")
+.value = "";
 
-async function checkResetMode(){
 
-const params=
-new URLSearchParams(
-window.location.search
-);
+document.getElementById("productPrice")
+.value = "";
 
-if(params.get("reset")==="true"){
 
-$("adminPanel").style.display="block";
+document.getElementById("productImageFile")
+.value = "";
 
-$("loginSection").style.display="none";
-$("dashboard").style.display="none";
-$("resetSection").style.display="block";
 
-$("adminPanel").scrollIntoView({
-behavior:"smooth"
-});
+document.getElementById("productAffiliate")
+.value = "";
 
-}
+
+document.getElementById("preview")
+.style.display = "none";
 
 }
 
 
-/* =========================
-START
-========================= */
+/* START */
 
 loadProducts();
-
-checkResetMode();
 
 </script>
 
 </body>
-</html>
+  </html>
